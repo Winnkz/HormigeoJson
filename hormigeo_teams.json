@@ -1,0 +1,41 @@
+[
+    {
+        "id": "antTeam",
+        "args": [
+            {
+                "id": "join",
+                "type": "LITERAL",
+                "args": [
+                    {
+                        "id": "color",
+                        "type": "STRING",
+                        "suggest": [
+                            "red",
+                            "brown",
+                            "yellow",
+                            "blue",
+                            "purple",
+                            "black"
+                        ],
+                        "args": [
+                            {
+                                "id": "player",
+                                "type": "ENTITY",
+                                "exec": [
+                                    {
+                                        "command": "disguise ant_{string_color} {entity_player_name}",
+                                        "delay": 0
+                                    },
+                                    {
+                                        "command": "team join {string_color}_team {entity_player_name}",
+                                        "delay": 0
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
